@@ -11,7 +11,7 @@ def encrypt(original_text, shift_amount):
     for letter in original_text:
         position = alphabet.index(letter)
         new_position = position + shift_amount
-        cipher_text += alphabet[new_position % 26]
+        cipher_text += alphabet[new_position % len(alphabet)]
 
     print(f"The encoded text is {cipher_text}")
 
