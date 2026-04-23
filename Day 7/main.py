@@ -23,6 +23,12 @@ while not game_over:
 
     guess = input("Guess a letter: ").lower()
 
+    if guess in guessed_letters:
+        print(f"You already guessed {guess}. Try a different letter.")
+        continue
+
+    guessed_letters.append(guess)
+
     correct_guess = False
 
     for position in range(len(chosen_word)):
