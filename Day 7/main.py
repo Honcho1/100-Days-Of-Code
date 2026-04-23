@@ -20,6 +20,7 @@ game_over = False
 while not game_over:
     print(stages[lives])
     print(" ".join(display))
+    print(f"********************* YOU HAVE {lives}/6 LIVES LEFT! *********************")
 
     guess = input("Guess a letter: ").lower()
 
@@ -40,7 +41,7 @@ while not game_over:
 
     if not correct_guess:
         lives -= 1
-        print(f"You guessed {guess}, that's not in the word. You lose a life.")
+        print(f"You guessed {guess}, that's not in the word. You lose a life. Lives remaining: {lives}")
 
         if lives == 0:
             game_over = True
@@ -50,4 +51,5 @@ while not game_over:
     if "_" not in display:
         game_over = True
         print(stages[lives])
+        print("".join(display))
         print("************************** YOU WIN! **************************")
