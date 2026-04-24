@@ -1,6 +1,7 @@
 # Caesar Cipher Program
 from unittest import result
 from art import logo
+
 print(logo)
 
 
@@ -12,16 +13,19 @@ shift = int(input("Type the shift number:\n"))
 
 def caesar(original_text, shift_amount, cipher_direction):
     result_text = ""
+    
+    if cipher_direction == "decode":
+        shift_amount *= -1
 
     for letter in original_text:
-        position = alphabet.index(letter)
+        
+        if letter in alphabet:
+            position = alphabet.index(letter)
+            new_position = (position + shift_amount) % 26
+            result_text += alphabet[new_position]
 
-        if cipher_direction == "encode":
-            new_position = position + shift_amount
-        elif cipher_direction == "decode":
-            new_position = position - shift_amount
-
-        result_text += alphabet[new_position % 26]
+        else:
+            result_text += letter
 
     print(f"The {cipher_direction}d text is {result_text}")
 
