@@ -1,5 +1,4 @@
 # Caesar Cipher Program
-from unittest import result
 from art import logo
 
 print(logo)
