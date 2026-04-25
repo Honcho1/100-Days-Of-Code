@@ -18,3 +18,6 @@ operations = {
     "*": multiply,
     "/": divide
 }
+
+answer = operations["*"](4, 8)
+print(answer)
