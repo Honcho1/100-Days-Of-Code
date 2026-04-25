@@ -20,6 +20,7 @@ operations = {
 }
 
 def calculator():
+    """This function allows the user to perform calculations using the defined operations. It prompts the user for input and continues to perform calculatios until the user decides to start a new calculation."""
     num1 = float(input("What is the first number? "))
 
     should_continue = True
