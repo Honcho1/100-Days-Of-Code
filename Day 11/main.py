@@ -1,5 +1,6 @@
 import random
 import os
+from art import logo
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
@@ -36,6 +37,8 @@ def compare(user_score, computer_score):
         return "You lose 😤"
     
 def play_game():
+    """Plays a game of Blackjack."""
+    print(logo)
     user_cards = []
     computer_cards = []
     game_over = False
