@@ -17,3 +17,20 @@ def calculate_score(hand):
         hand.append(1)
 
     return sum(hand)
+
+def compare(user_score, computer_score):
+    """Compares the user's score with the computer's score and returns the result."""
+    if user_score == computer_score:
+        return "Draw 🙃"
+    elif computer_score == 0:
+        return "Lose, opponent has Blackjack 😱"
+    elif user_score == 0:
+        return "Win with a Blackjack 😎"
+    elif user_score > 21:
+        return "You went over. You lose 😭"
+    elif computer_score > 21:
+        return "Opponent went over. You win 😁"
+    elif user_score > computer_score:
+        return "You win 😃"
+    else:
+        return "You lose 😤"
