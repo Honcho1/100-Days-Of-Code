@@ -45,6 +45,6 @@ def game():
                 print(f"The number was {number}.")
                 game_over = True
             else:
-                print("Guess again.")
+                print("Guess again.\n")
 
 game()
