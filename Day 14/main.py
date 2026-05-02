@@ -27,3 +27,11 @@ def play_game():
     score = 0
     account_a = get_random_account()
     game_over = False
+
+    while not game_over:
+        account_b = get_random_account(used_account=account_a)
+
+        format_account(account_a, 'A')
+        print(vs)
+        format_account(account_b, 'B')
+        user_answer = input("\nWho has more followers? Type 'A' or 'B': ").lower()
