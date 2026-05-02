@@ -14,4 +14,10 @@ def format_account(account, label):
     """Print a formatted description of an account."""
     print(f"Compare {label}: {account['name']}, a {account['description']}, from {account['country']}.")
 
-    
+def check_answer(user_answer, account_a, account_b):
+    """Return True if the user's answer is correct, False otherwise."""
+    if account_a['follower_count'] > account_b['follower_count']:
+        correct_answer = 'a'
+    else:
+        correct_answer = 'b'
+    return user_answer == correct_answer
