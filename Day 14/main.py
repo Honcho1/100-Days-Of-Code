@@ -21,3 +21,9 @@ def check_answer(user_answer, account_a, account_b):
     else:
         correct_answer = 'b'
     return user_answer == correct_answer
+
+def play_game():
+    print(logo)
+    score = 0
+    account_a = get_random_account()
+    game_over = False
