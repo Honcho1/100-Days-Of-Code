@@ -62,3 +62,10 @@ def make_coffee(drink_name):
     for item in ingredients:
         resources[item] -= ingredients[item]
     print(f"Here is your {drink_name} ☕. Enjoy!")
+
+def print_report():
+    """Print current resource levels and profit."""
+    print(f"Water: {resources['water']}ml")
+    print(f"Milk: {resources['milk']}ml")
+    print(f"Coffee: {resources['coffee']}g")
+    print(f"Money: ${profit}")
