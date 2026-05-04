@@ -1,5 +1,8 @@
 # Coffee Machine
 
+from platform import machine
+
+
 MENU = {
     "espresso": {
         "ingredients": {"water": 50, "coffee": 18},
@@ -69,3 +72,6 @@ def print_report():
     print(f"Milk: {resources['milk']}ml")
     print(f"Coffee: {resources['coffee']}g")
     print(f"Money: ${profit}")
+
+machine_on = True
+
