@@ -31,3 +31,13 @@ def is_resource_sufficient(drink_name):
             print(f"Sorry, there is not enough {item}.")
             return False
     return True
+
+def process_coins():
+    """Ask user to insert coins and returns total value in dollars."""
+    print("Please insert coins.")
+    quarters = int(input("How many quarters? "))
+    dimes = int(input("How many dimes? "))
+    nickels = int(input("How many nickels? "))
+    pennies = int(input("How many pennies? "))
+    total = (quarters * 0.25) + (dimes * 0.10) + (nickels * 0.05) + (pennies * 0.01)
+    return total
