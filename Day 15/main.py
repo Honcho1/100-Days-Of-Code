@@ -20,3 +20,14 @@ resources = {
     "milk": 200,     # ml
     "coffee": 100,   # g
 }
+
+profit = 0
+
+def is_resource_sufficient(drink_name):
+    """Check if the machine has enough of each ingredient to make the drink."""
+    ingredients = MENU[drink_name]["ingredients"]
+    for item in ingredients:
+        if ingredients[item] > resources[item]:
+            print(f"Sorry, there is not enough {item}.")
+            return False
+    return True
