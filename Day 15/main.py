@@ -41,3 +41,17 @@ def process_coins():
     pennies = int(input("How many pennies? "))
     total = (quarters * 0.25) + (dimes * 0.10) + (nickels * 0.05) + (pennies * 0.01)
     return total
+
+def is_transaction_successful(money_received, drink_name):
+    """Check if the user paid enough; refund or return change if needed."""
+    cost = MENU[drink_name]["cost"]
+    if money_received >= cost:
+        change = round(money_received - cost, 2)
+        if change > 0:
+            print(f"Here is ${change} in change.")
+        global profit
+        profit += cost
+        return True
+    else:
+        print("Sorry, that's not enough money. Money refunded.")
+        return False
