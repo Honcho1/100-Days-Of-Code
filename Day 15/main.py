@@ -75,3 +75,20 @@ def print_report():
 
 machine_on = True
 
+while machine_on:
+    choice = input("What would you like? (espresso/latte/cappuccino): ").lower()
+
+    if choice == "off":
+        machine_on = False
+
+    elif choice == "report":
+        print_report()
+
+    elif choice in MENU:
+        if is_resource_sufficient(choice):
+            payment = process_coins()
+            if is_transaction_successful(payment, choice):
+                make_coffee(choice)
+
+    else:
+        print("Invalid option. Please choose espresso, latte, or cappuccino.")
