@@ -7,3 +7,6 @@ class QuizBrain:
         current_question = self.question_list[self.question_number]
         user_answer = input(f"Q.{self.question_number + 1}: {current_question.text} (True/False): ")
         return user_answer
+    
+    def still_has_questions(self):
+        return self.question_number < len(self.question_list)
