@@ -6,3 +6,6 @@ question_bank = [Question(question["text"], question["answer"]) for question in 
 
 quiz = QuizBrain(question_bank)
 quiz.next_question()
+
+while quiz.still_has_questions():
+    quiz.next_question()
