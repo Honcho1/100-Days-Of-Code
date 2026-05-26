@@ -6,13 +6,15 @@ def random_color():
     return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
 
-def draw_shape(turtle, sides, side_length=100):
-    turtle.color(random_color())
-    angle = 360 / sides
-    for _ in range(sides):
-        turtle.forward(side_length)
-        turtle.right(angle)
-
+def draw_random_walk(turtle, steps, step_length=20):
+    directions = [0, 90, 180, 270]
+    turtle.pensize(5)
+    turtle.speed("fastest")
+    turtle.hideturtle()
+    for _ in range(steps):
+        turtle.color(random_color())
+        turtle.setheading(random.choice(directions))
+        turtle.forward(step_length)
 
 
 if __name__ == "__main__":
@@ -20,14 +22,6 @@ if __name__ == "__main__":
     screen.colormode(255)
 
     tim = Turtle()
-    tim.pensize(3)
-    tim.speed("fastest")
-
-    for sides in range(3, 11):
-        tim.penup()
-        tim.home()
-        tim.setheading(0)
-        tim.pendown()
-        draw_shape(tim, sides, 100)
+    draw_random_walk(tim, 200, 20)
 
     screen.exitonclick()
