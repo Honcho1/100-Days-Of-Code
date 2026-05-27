@@ -6,15 +6,15 @@ def random_color():
     return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
 
-def draw_random_walk(turtle, steps, step_length=20):
-    directions = [0, 90, 180, 270]
-    turtle.pensize(5)
+
+def draw_spirograph(turtle, radius=100, gap_size=5):
+    turtle.pensize(2)
     turtle.speed("fastest")
-    turtle.hideturtle()
-    for _ in range(steps):
+    count = int(360 / gap_size)
+    for _ in range(count):
         turtle.color(random_color())
-        turtle.setheading(random.choice(directions))
-        turtle.forward(step_length)
+        turtle.circle(radius)
+        turtle.setheading(turtle.heading() + gap_size)
 
 
 if __name__ == "__main__":
@@ -22,6 +22,7 @@ if __name__ == "__main__":
     screen.colormode(255)
 
     tim = Turtle()
-    draw_random_walk(tim, 200, 20)
+
+    draw_spirograph(tim, radius=100, gap_size=5)
 
     screen.exitonclick()
