@@ -1,7 +1,6 @@
 import colorgram
 
-
-colors = colorgram.extract("image.jpg", 30)
+colors = colorgram.extract("hirst-painting/image.jpg", 30)
 
 rgb_colors = []
 
