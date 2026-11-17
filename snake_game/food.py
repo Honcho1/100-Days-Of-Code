@@ -1,4 +1,4 @@
 from turtle import Turtle
 
-class Food:
+class Food(Turtle):
     pass
