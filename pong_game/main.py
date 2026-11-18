@@ -31,9 +31,12 @@ while game_is_on:
         ball.bounce_y()
 
     # Detect when the paddle misses
-    if ball.xcor() > 380 or ball.xcor() < -380:
+    if ball.xcor() > 380:
+        scoreboard.left_point()
         ball.reset_position()
-        scoreboard.left_point() if ball.xcor() > 380 else scoreboard.right_point()
+    elif ball.xcor() < -380:
+        scoreboard.right_point()
+        ball.reset_position()
     screen.update()
 
     # Detect collision with paddles
