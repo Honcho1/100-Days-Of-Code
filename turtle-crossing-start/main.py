@@ -22,4 +22,8 @@ while game_is_on:
     if car_timer % 6 == 0:
         car_manager.create_car()
     car_manager.move_cars()
+    for car in car_manager.all_cars:
+        if (abs(player.xcor() - car.xcor()) < 30
+                and abs(player.ycor() - car.ycor()) < 20):
+            game_is_on = False
     screen.update()
