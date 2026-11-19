@@ -13,6 +13,7 @@ screen.listen()
 screen.onkey(player.go_up, "Up")
 
 car_manager = CarManager()
+scoreboard = Scoreboard()
 car_timer = 0
 
 game_is_on = True
@@ -25,8 +26,11 @@ while game_is_on:
     if player.is_at_finish_line():
         player.go_to_start()
         car_manager.increase_speed()
+        scoreboard.increase_level()
     for car in car_manager.all_cars:
         if (abs(player.xcor() - car.xcor()) < 30
                 and abs(player.ycor() - car.ycor()) < 20):
             game_is_on = False
+            scoreboard.game_over()
+            break
     screen.update()
