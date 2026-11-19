@@ -12,7 +12,14 @@ player = Player()
 screen.listen()
 screen.onkey(player.go_up, "Up")
 
+car_manager = CarManager()
+car_timer = 0
+
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
+    car_timer += 1
+    if car_timer % 6 == 0:
+        car_manager.create_car()
+    car_manager.move_cars()
     screen.update()
