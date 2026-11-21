@@ -1,1 +1,3 @@
-file = open("my_file.txt")
+file = open("Day 24/my_file.txt")
+contents = file.read()
+print(contents)
