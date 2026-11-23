@@ -1,8 +1,25 @@
-#TODO: Create a letter using starting_letter.txt 
-#for each name in invited_names.txt
-#Replace the [name] placeholder with the actual name.
-#Save the letters in the folder "ReadyToSend".
-    
-#Hint1: This method will help you: https://www.w3schools.com/python/ref_file_readlines.asp
-    #Hint2: This method will also help you: https://www.w3schools.com/python/ref_string_replace.asp
-        #Hint3: THis method will help you: https://www.w3schools.com/python/ref_string_strip.asp
+from pathlib import Path
+
+
+def main():
+    project_dir = Path(__file__).resolve().parent
+    names_path = project_dir / "Input" / "Names" / "invited_names.txt"
+    template_path = project_dir / "Input" / "Letters" / "starting_letter.txt"
+    output_dir = project_dir / "Output" / "ReadyToSend"
+
+    template = template_path.read_text(encoding="utf-8")
+    names = names_path.read_text(encoding="utf-8").splitlines()
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    for name in names:
+        name = name.strip()
+        if not name:
+            continue
+
+        letter = template.replace("[name]", name)
+        output_path = output_dir / f"letter_for_{name}.txt"
+        output_path.write_text(letter, encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()
