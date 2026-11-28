@@ -1,5 +1,5 @@
 import pandas as pd
 
 data = pd.read_csv("weather_data.csv")
-average_temperature = data["temp"].mean()
-print(average_temperature)
+maximum_temperature = data["temp"].max()
+print(maximum_temperature)
