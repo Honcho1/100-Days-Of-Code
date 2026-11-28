@@ -1,4 +1,5 @@
 import pandas as pd
 
 data = pd.read_csv("weather_data.csv")
-print(data)
+average_temperature = data["temp"].mean()
+print(average_temperature)
